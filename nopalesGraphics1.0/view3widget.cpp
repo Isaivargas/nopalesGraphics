@@ -1,5 +1,7 @@
 #include "view3widget.h"
 #include "object.h"
+#include "plane.h"
+#include "spline.h"
 
 #include <QApplication>
 #include <QDialog>
@@ -42,8 +44,10 @@ void  view3Widget:: paintGL(){
     gluLookAt(3, 3, -8, 0, 0, 0, 0, 0,1 );
 
 
-     object Object ;
-
+    plane Plane;
+    //spline Spline;
+      object Object ;
+      Object.Draw_Cube(0,0,0);
 }
 
 void  view3Widget:: resizeGL(int w, int h) {

@@ -1,6 +1,10 @@
 #include "view2widget.h"
 #include "view1widget.h"
+#include "plane.h"
+
+
 #include "object.h"
+#include "spline.h"
 
 #include <QApplication>
 #include <QDialog>
@@ -17,6 +21,7 @@ int band=0;
 
 
 view2Widget:: view2Widget(QWidget *parent1):QOpenGLWidget {parent1} {
+
 
 
 }
@@ -47,11 +52,18 @@ void  view2Widget:: paintGL(){
     gluLookAt(1, 2, 10, 0, 0, 0, 0, 0,1 );
 
 
-     object Object ;
+
+    plane Plane;
+      object Object ;
+      Object.Draw_Cube(0,0,0);
+    //spline Spline;
+
+
 
 }
 
 void  view2Widget:: resizeGL(int w, int h) {
+
 
        glViewport(0,0,w,h);
        glMatrixMode(GL_PROJECTION);

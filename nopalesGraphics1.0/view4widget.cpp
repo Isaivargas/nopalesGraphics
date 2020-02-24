@@ -1,6 +1,9 @@
 #include "view4widget.h"
 #include "object.h"
 
+#include "plane.h"
+#include   "spline.h"
+
 #include <QApplication>
 #include <QDialog>
 #include <QLabel>
@@ -39,10 +42,13 @@ void  view4Widget:: paintGL(){
     gluPerspective(80, 1, 1.0, 0.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(7, 10, 7, 0, 0, 0, 0, 0,1 );
+    gluLookAt(7, 7, 7, 0, 0, 0, 0, 0,1 );
 
 
-     object Object ;
+    plane Plane;
+   // spline Spline;
+      object Object ;
+      Object.Draw_Cube(0,0,0);
 
 }
 

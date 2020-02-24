@@ -1,5 +1,10 @@
 #include "nopalesgraphics.h"
 #include "ui_nopalesgraphics.h"
+#include <QKeyEvent>
+
+#include "example.h"
+#include "ui_example.h"
+
 
 #include "camera.h"
 
@@ -13,11 +18,10 @@ nopalesGraphics::nopalesGraphics(QWidget *parent) :
 
     ui->setupUi(this);
 
-    ui->widget->update();
-    ui->spinBox_x->setValue(cursor().pos().x());
-    ui->spinBox_y->setValue(cursor().pos().y());
-    configureSpinBox(ui->spinBox_x ,-INT_MAX ,+INT_MAX);
-    configureSpinBox(ui->spinBox_y ,-INT_MAX ,+INT_MAX);
+   // ui->spinBox_x->setValue(cursor().pos().x());
+   // ui->spinBox_y->setValue(cursor().pos().y());
+    ui->widget1->update();
+
     
 }
 
@@ -51,7 +55,6 @@ void nopalesGraphics::mouseDoubleClickEvent(QMouseEvent *event)
 void nopalesGraphics::mouseMoveEvent(QMouseEvent *event)
 {
     onMouseEvent("mouse Click", event->pos());
-
     QWidget::mouseMoveEvent(event);
 
 }
@@ -72,21 +75,65 @@ void nopalesGraphics::mouseReleaseEvent(QMouseEvent *event)
 
 }
 
-void nopalesGraphics::configureSpinBox(QSpinBox *spinBox, int min, int max) const
+void nopalesGraphics::keyPressEvent(QKeyEvent *e)
 {
+    QString cmd;
+    cmd = char (e->key());
 
-    spinBox -> setMaximum(max);
-    spinBox -> setMinimum(min);
 
 }
 
-void nopalesGraphics:: onMouseEvent(const QString &eventName,const QPoint & pos)
+
+
+void nopalesGraphics:: onMouseEvent(const QString & eventName,const QPoint & pos)
 {
-    ui->spinBox_x->setValue(pos.x());
-    ui->widget1->eX=pos.x();
-    ui->spinBox_y->setValue(pos.y());
-    ui->widget1->eY=pos.y();
+   // ui->spinBox_x->setValue(pos.x());
 
+        ui->widget1->eX=pos.x();
+        ui->widget1->eY=pos.y();
+
+        ui->widget1->update();
+        ui->views->update();
+
+}
+
+void nopalesGraphics::on_spinBox_x_valueChanged(int arg1)
+{
+    //lx=ui->spinBox_x->value();
+    ui->widget1->lx=ui->spinBox_x->value();
     ui->widget1->update();
+    //ui->spinBox_x->setValue(lx);
+}
 
+void nopalesGraphics::on_spinBox_y_valueChanged(int arg1)
+{
+
+    ui->widget1->ly=ui->spinBox_y->value();
+    ui->widget1->update();
+}
+
+
+
+void nopalesGraphics::on_spinBox_z_valueChanged(int arg1)
+{
+    ui->widget1->lz=ui->spinBox_z->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_spinBox_eX_valueChanged(int arg1)
+{
+    ui->widget1->eX=ui->spinBox_eX->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_spinBox_eY_valueChanged(int arg1)
+{
+    ui->widget1->eY=ui->spinBox_eY->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_spinBox_eZ_valueChanged(int arg1)
+{
+    ui->widget1->eZ=ui->spinBox_eZ->value();
+    ui->widget1->update();
 }

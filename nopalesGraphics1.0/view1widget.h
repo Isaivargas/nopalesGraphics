@@ -29,6 +29,11 @@ public:
     int pX,pY,pZ;
     int upX,upY,upZ;
 
+public:
+    int lx,ly,lz;
+    float ex=10.0;
+    float ey=10.0;
+
 private:
     int  getPosicionCamerax(const QPoint & pos);
     void camera();

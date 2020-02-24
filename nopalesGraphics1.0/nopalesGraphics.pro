@@ -34,7 +34,9 @@ SOURCES += \
     view4widget.cpp \
     object.cpp \
     camera.cpp \
-    views.cpp
+    plane.cpp \
+    example.cpp \
+    spline.cpp
 
 HEADERS += \
         nopalesgraphics.h \
@@ -44,7 +46,9 @@ HEADERS += \
        view4widget.h \
     object.h \
     camera.h \
-    views.h
+    plane.h \
+    example.h \
+    spline.h
 
 FORMS += \
         nopalesgraphics.ui \
