@@ -36,7 +36,7 @@ SOURCES += \
     camera.cpp \
     plane.cpp \
     example.cpp \
-    spline.cpp
+    Curva_Spline.cpp
 
 HEADERS += \
         nopalesgraphics.h \
@@ -48,7 +48,8 @@ HEADERS += \
     camera.h \
     plane.h \
     example.h \
-    spline.h
+    spline.h \
+    SplineC.h
 
 FORMS += \
         nopalesgraphics.ui \

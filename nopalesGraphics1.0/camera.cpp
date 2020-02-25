@@ -11,14 +11,8 @@ camera::camera()
 }
 
 
-
-
 void camera::setPosicion(const QPoint & pos)
 {
-
-
-
-
 
 }
 

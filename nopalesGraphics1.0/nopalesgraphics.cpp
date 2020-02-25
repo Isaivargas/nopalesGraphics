@@ -10,6 +10,7 @@
 
 
 
+
 nopalesGraphics::nopalesGraphics(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::nopalesGraphics )
@@ -77,10 +78,7 @@ void nopalesGraphics::mouseReleaseEvent(QMouseEvent *event)
 
 void nopalesGraphics::keyPressEvent(QKeyEvent *e)
 {
-    QString cmd;
     cmd = char (e->key());
-
-
 }
 
 
@@ -89,11 +87,13 @@ void nopalesGraphics:: onMouseEvent(const QString & eventName,const QPoint & pos
 {
    // ui->spinBox_x->setValue(pos.x());
 
+    if ("#"==cmd){
         ui->widget1->eX=pos.x();
         ui->widget1->eY=pos.y();
 
         ui->widget1->update();
         ui->views->update();
+     }
 
 }
 
@@ -136,4 +136,27 @@ void nopalesGraphics::on_spinBox_eZ_valueChanged(int arg1)
 {
     ui->widget1->eZ=ui->spinBox_eZ->value();
     ui->widget1->update();
+}
+
+
+
+
+void nopalesGraphics::on_add_point_clicked()
+{
+
+}
+
+void nopalesGraphics::on_add_px_textChanged(const QString &arg1)
+{
+
+}
+
+void nopalesGraphics::on_add_py_textChanged(const QString &arg1)
+{
+
+}
+
+void nopalesGraphics::on_add_pz_textChanged(const QString &arg1)
+{
+
 }

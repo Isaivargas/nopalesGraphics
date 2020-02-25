@@ -25,6 +25,7 @@ class nopalesGraphics : public QMainWindow
 
 
 public:
+    QString cmd;
     explicit nopalesGraphics(QWidget *parent = nullptr);
     ~nopalesGraphics();
 
@@ -46,6 +47,18 @@ private slots:
     void on_spinBox_eY_valueChanged(int arg1);
 
     void on_spinBox_eZ_valueChanged(int arg1);
+
+
+
+
+
+    void on_add_point_clicked();
+
+    void on_add_px_textChanged(const QString &arg1);
+
+    void on_add_py_textChanged(const QString &arg1);
+
+    void on_add_pz_textChanged(const QString &arg1);
 
 protected:
 

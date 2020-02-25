@@ -58,11 +58,6 @@ void object::Draw_Cube(float j,float i,float k)
     glEnd();
 
 
-
-
-
-
-
 }
 
 

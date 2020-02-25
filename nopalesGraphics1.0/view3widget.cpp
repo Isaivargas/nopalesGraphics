@@ -1,7 +1,7 @@
 #include "view3widget.h"
 #include "object.h"
 #include "plane.h"
-#include "spline.h"
+#include "SplineC.h"
 
 #include <QApplication>
 #include <QDialog>
@@ -46,8 +46,11 @@ void  view3Widget:: paintGL(){
 
     plane Plane;
     //spline Spline;
-      object Object ;
-      Object.Draw_Cube(0,0,0);
+      //object Object ;
+      //Object.Draw_Cube(0,0,0);
+
+      SplineC splineC1();
+
 }
 
 void  view3Widget:: resizeGL(int w, int h) {

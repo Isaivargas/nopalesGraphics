@@ -13,6 +13,7 @@
 
 
 
+
 class view1Widget : public QOpenGLWidget,public QOpenGLFunctions
 {
     Q_OBJECT
@@ -34,7 +35,13 @@ public:
     float ex=10.0;
     float ey=10.0;
 
+public:
+    int add_px, add_py, add_pz;
+    int p_rx,p_ry,p_rz;
+    int p_sx,p_sy,p_sz;
+
 private:
+
     int  getPosicionCamerax(const QPoint & pos);
     void camera();
 

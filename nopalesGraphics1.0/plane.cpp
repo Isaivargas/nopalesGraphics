@@ -4,6 +4,8 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 
+
+
 plane::plane()
 {
 
@@ -95,13 +97,13 @@ plane::plane()
     glBegin(GL_LINES);
     glColor3f(1.0, 0.0, 0.0);
     glVertex3f(0, 0, 0);
-    glVertex3f(3, 0, 0);
+    glVertex3f(1, 0, 0);
     glColor3f(0.0, 1.0, 0.0);
     glVertex3f(0, 0, 0);
-    glVertex3f(0, 3, 0);
+    glVertex3f(0, 1, 0);
     glColor3f(0.0, 0.0, 1.0);
     glVertex3f(0, 0, 0);
-    glVertex3f(0, 0, 3);
+    glVertex3f(0, 0, 1);
     glEnd();
     glFlush();
 }

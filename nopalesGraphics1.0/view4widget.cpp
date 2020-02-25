@@ -2,7 +2,7 @@
 #include "object.h"
 
 #include "plane.h"
-#include   "spline.h"
+#include   "SplineC.h"
 
 #include <QApplication>
 #include <QDialog>
@@ -47,8 +47,11 @@ void  view4Widget:: paintGL(){
 
     plane Plane;
    // spline Spline;
-      object Object ;
-      Object.Draw_Cube(0,0,0);
+     // object Object ;
+     // Object.Draw_Cube(0,0,0);
+
+    SplineC splineC1();
+
 
 }
 
