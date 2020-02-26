@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>example</class>
+ <widget class="QWidget" name="example">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>617</width>
+    <height>603</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QFrame" name="frameViews">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="view1Widget" name="widget1" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>500</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="view2Widget" name="widget2" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>500</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="view3Widget" name="widget3" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>500</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="view4Widget" name="widget4" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>500</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+     <zorder>widget2</zorder>
+     <zorder>widget4</zorder>
+     <zorder>widget3</zorder>
+     <zorder>widget1</zorder>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>view2Widget</class>
+   <extends>QWidget</extends>
+   <header>view2widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>view1Widget</class>
+   <extends>QWidget</extends>
+   <header>view1widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>view3Widget</class>
+   <extends>QWidget</extends>
+   <header>view3widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>view4Widget</class>
+   <extends>QWidget</extends>
+   <header>view4widget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
