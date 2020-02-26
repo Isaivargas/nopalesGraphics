@@ -6,6 +6,7 @@
 
 
 #include "object.h"
+#include "snurbs.h"
 #include "SplineC.h"
 
 #include <QApplication>
@@ -55,9 +56,43 @@ void  view2Widget:: paintGL(){
 
 
     plane Plane;
-     // object Object ;
-     // Object.Draw_Cube(0,0,0);
-    SplineC splineC1;
+
+    view1Widget view;
+
+
+    switch(figure) {
+
+       case 1: { SplineC spline;
+                 spline.addPoint(view.add_px,view.add_py,view.add_pz);
+                 spline.drawSpline();
+
+
+                   }
+        break;
+
+       //case 2:
+        //break;
+
+       //case 3:
+       // break;
+
+       case 4: {
+               SupNURBS nurbs;
+               nurbs.addPoint(2,3,1);
+               nurbs.drawNurbs();}
+        break;
+
+       //case 5:
+        //break;
+
+       //case 6:
+       // break;
+
+       case 7: { object cube;
+                 cube.Draw_Cube(view.lx,view.ly,view.lz);}
+        break;
+
+    }
 
 
 

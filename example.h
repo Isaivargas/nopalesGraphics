@@ -31,8 +31,15 @@ private :
     void onMouseEventViews(const QString &eventName,const QPoint & pos);
 
 
-private:
+public:
     Ui::example *ui;
+
+public slots:
+    void receiveMessage(const QString & msg);
+
+public:
+    int band=0;
+
 };
 
 #endif // EXAMPLE_H

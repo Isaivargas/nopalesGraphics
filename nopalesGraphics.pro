@@ -37,7 +37,8 @@ SOURCES += \
     plane.cpp \
     example.cpp \
     Curva_Spline.cpp \
-    snurbs.cpp
+    snurbs.cpp \
+    animation.cpp
 
 HEADERS += \
         nopalesgraphics.h \
@@ -51,7 +52,8 @@ HEADERS += \
     example.h \
     spline.h \
     SplineC.h \
-    snurbs.h
+    snurbs.h \
+    animation.h
 
 FORMS += \
         nopalesgraphics.ui \

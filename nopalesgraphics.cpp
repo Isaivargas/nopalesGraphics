@@ -2,8 +2,8 @@
 #include "ui_nopalesgraphics.h"
 #include <QKeyEvent>
 
-#include "example.h"
-#include "ui_example.h"
+
+#include "view2widget.h"
 
 
 #include "camera.h"
@@ -18,12 +18,10 @@ nopalesGraphics::nopalesGraphics(QWidget *parent) :
 {
 
     ui->setupUi(this);
-
-   // ui->spinBox_x->setValue(cursor().pos().x());
-   // ui->spinBox_y->setValue(cursor().pos().y());
     ui->widget1->update();
-
-    
+    Example = new example();
+   // connect(pChild,SIGNAL(buttonClick()),this, SLOT(onChildOk()))
+    connect(this,SIGNAL(sendMessage(QString)),Example,SLOT(receiveMessage(QString)));
 }
 
 
@@ -38,7 +36,13 @@ nopalesGraphics::~nopalesGraphics()
 
 void nopalesGraphics::on_views_clicked()
 {
-      Example = new example();
+
+     QString msg;
+
+      if (msg!=QString::number(ui->widget1->figure)){
+          msg = QString::number(ui->widget1->figure);
+      }
+      emit sendMessage(msg);
       Example ->show();
 }
 
@@ -152,3 +156,48 @@ void nopalesGraphics::on_add_point_clicked()
 }
 
 
+
+
+
+
+void nopalesGraphics::on_buttonPlay_clicked()
+{
+
+}
+
+void nopalesGraphics::on_actionSplineA_triggered()
+{
+    ui->widget1->figure=1;
+    ui->widget1->update();
+
+}
+
+void nopalesGraphics::on_actionSplineB_triggered()
+{
+    ui->widget1->figure=2;
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_actionSplineC_triggered()
+{
+    ui->widget1->figure=3;
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_actionNurbsA_triggered()
+{
+    ui->widget1->figure=4;
+    ui->widget1->update();
+
+}
+
+void nopalesGraphics::on_actionCube_triggered()
+{
+    ui->widget1->figure=7;
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_actionNew_Animation_triggered()
+{
+
+}

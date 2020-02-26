@@ -11,11 +11,12 @@ class view2Widget : public QOpenGLWidget,public QOpenGLFunctions
     Q_OBJECT
 
 public:
-
     view2Widget(QWidget * parent =nullptr);
 
-protected:
+public:
+    int figure=0;
 
+protected:
 
     void initializeGL() override;
     void paintGL() override;

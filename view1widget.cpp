@@ -48,23 +48,57 @@ void view1Widget:: paintGL()
     gluPerspective(20, 1, 1.0, 0.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-
-    gluLookAt(eX, 10, 17, 0, 0, 0, 0, 0, 1);
     glColor3f(1.0, 1.0, 1.0);
+
+
+
+    gluLookAt(eX*10, 10, 17, 0, 0, 0, 0, 0, 1);
+
+
 
     plane Plane;
 
-    SplineC spline;
-    spline.addPoint(add_px,add_py,add_pz);
-    spline.drawSpline();
 
-   //SupNURBS nurbs;
-   //nurbs.addPoint(2,3,1);
-   //nurbs.drawNurbs();
+    switch(figure) {
+
+       case 1: {SplineC spline;
+               spline.addPoint(add_px,add_py,add_pz);
+               spline.drawSpline();
+                   }
+        break;
+
+       //case 2:
+        //break;
+
+       //case 3:
+       // break;
+
+       case 4: {SupNURBS nurbs;
+               nurbs.addPoint(2,3,1);
+               nurbs.drawNurbs();}
+        break;
+
+       //case 5:
+        //break;
+
+       //case 6:
+       // break;
+
+       case 7: { object cube;
+                cube.Draw_Cube(lx,ly,lz);}
+
+        break;
 
 
+       case 10:{
+                          }
+        break;
+
+    }
 
 }
+
+
 
 void view1Widget::resizeGL(int w, int h){
        glViewport(0, 0, w, h);
@@ -74,3 +108,6 @@ void view1Widget::resizeGL(int w, int h){
        glLoadIdentity();
 }
 
+int view1Widget:: getFigure(){
+    return figure;
+}

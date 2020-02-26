@@ -19,7 +19,8 @@ class view1Widget : public QOpenGLWidget,public QOpenGLFunctions
     Q_OBJECT
 
 public:
-
+    int figure =0;
+    int getFigure();
     view1Widget(QWidget * parent =nullptr);
     void initializeGL() override;
     void paintGL() override;

@@ -25,6 +25,10 @@ private:
     void  qColorToRGBView4(const QColor & C,float &r,float &g ,float &b)const;
     float normalizaView4(float val, float min , float max) const;
 
+
+public:
+    int figure;
+
 };
 
 #endif // OGLWIDGET_H

@@ -33,9 +33,8 @@ public:
 
 private slots:
 
+
     void on_views_clicked();
-
-
 
     void on_spinBox_x_valueChanged(int arg1);
 
@@ -50,12 +49,22 @@ private slots:
     void on_spinBox_eZ_valueChanged(int arg1);
 
 
-
-
-
     void on_add_point_clicked();
 
 
+    void on_buttonPlay_clicked();
+
+    void on_actionSplineA_triggered();
+
+    void on_actionSplineB_triggered();
+
+    void on_actionSplineC_triggered();
+
+    void on_actionNurbsA_triggered();
+
+    void on_actionCube_triggered();
+
+    void on_actionNew_Animation_triggered();
 
 protected:
 
@@ -76,6 +85,14 @@ private:
 private :
 
     void onMouseEvent(const QString & eventName,const QPoint & pos);
+
+
+
+signals:
+    void sendMessage(const QString & msg);
+
+
+
 
 };
 

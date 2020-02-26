@@ -20,26 +20,6 @@
    <item row="0" column="0">
     <widget class="QFrame" name="frameViews">
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="view1Widget" name="widget1" native="true">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>500</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="view2Widget" name="widget2" native="true">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>500</height>
-         </size>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="view3Widget" name="widget3" native="true">
         <property name="maximumSize">
@@ -60,6 +40,42 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="1">
+       <widget class="view2Widget" name="widget2" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>500</height>
+         </size>
+        </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>20</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(238, 238, 236);</string>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="view1Widget" name="widget1" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>500</height>
+         </size>
+        </property>
+       </widget>
+      </item>
      </layout>
      <zorder>widget2</zorder>
      <zorder>widget4</zorder>
@@ -71,15 +87,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>view2Widget</class>
-   <extends>QWidget</extends>
-   <header>view2widget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>view1Widget</class>
    <extends>QWidget</extends>
    <header>view1widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>view2Widget</class>
+   <extends>QWidget</extends>
+   <header>view2widget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
