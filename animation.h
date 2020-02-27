@@ -7,7 +7,6 @@
 typedef class animation {
 
 public:
-
     GLint pointsNum ;
 
 private:
@@ -15,7 +14,7 @@ private:
      //Numero de puntos de control usados para decribir la curva spline
 public:
 
-    void drawAnimation();
+    void drawAnimation(int playAnimation);
 
     animation();//Constructor
     /*Agregar un punto a la curva spline, se tiene que especificar

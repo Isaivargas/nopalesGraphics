@@ -56,8 +56,7 @@ void object::Draw_Cube(float j,float i,float k)
     glColor3f(1.0, 0.0, 1.0); glVertex3f(-2.5+j, -2.5+i,6+k);
     glColor3f(1.0, 1.0, 1.0); glVertex3f(-2.5+j, 2.5+i, 6+k);
     glEnd();
-
-
+    glFlush();
 }
 
 

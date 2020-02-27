@@ -34,6 +34,7 @@ void SupNURBS::moveSplineC(GLfloat p_x, GLfloat p_y, GLfloat p_z) {
             ctrlpoints[i][j][2] = ctrlpoints[i][j][2] + p_z;
         }
     }
+     drawNurbs();
 }
 
 void SupNURBS::moveSplinePoint(GLfloat p_x, GLfloat p_y, GLfloat p_z, GLint i, GLint j) {
@@ -73,6 +74,7 @@ void SupNURBS::rotateSplineC(GLint axis, GLfloat angle) {
     default:
         break;
     }
+     drawNurbs();
 }
 
 GLfloat* SupNURBS::getctrlpoints(GLint i, GLint j) {
@@ -112,4 +114,16 @@ void SupNURBS::drawNurbs(){
         glPopMatrix();
         glFlush();
 
+}
+
+void SupNURBS::scaleSplineC(GLfloat a){
+    GLint i, j;
+    for (i = 0; i < pointsNumU; i++) {
+        for (j = 0; j < pointsNumV; j++) {
+            ctrlpoints[i][j][0] = ctrlpoints[i][j][0] *a;
+            ctrlpoints[i][j][1] = ctrlpoints[i][j][1] *a;
+            ctrlpoints[i][j][2] = ctrlpoints[i][j][2] *a;
+        }
+    }
+    drawNurbs();
 }

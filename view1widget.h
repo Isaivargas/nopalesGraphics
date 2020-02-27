@@ -20,6 +20,7 @@ class view1Widget : public QOpenGLWidget,public QOpenGLFunctions
 
 public:
     int figure =0;
+    int play=0;
     int getFigure();
     view1Widget(QWidget * parent =nullptr);
     void initializeGL() override;
@@ -30,6 +31,10 @@ public:
     int eX,eY,eZ;
     int pX,pY,pZ;
     int upX,upY,upZ;
+    int scale=1;
+    int angle=0;
+    int axis=1;
+    int pointEdit;
 
 public:
     int lx,ly,lz;

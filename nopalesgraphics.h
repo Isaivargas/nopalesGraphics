@@ -66,6 +66,36 @@ private slots:
 
     void on_actionNew_Animation_triggered();
 
+    void on_point_edit_textChanged(const QString &arg1);
+
+    void on_location_SpinBox_px_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_py_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_pz_valueChanged(const QString &arg1);
+
+    void on_rotate_SpinBox_px_valueChanged(const QString &arg1);
+
+    void on_rotate_SpinBox_py_valueChanged(const QString &arg1);
+
+    void on_rotate_SpinBox_pz_valueChanged(const QString &arg1);
+
+    void on_angle_valueChanged(const QString &arg1);
+
+    void on_scaleBox_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_pxNurb_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_pyNurb_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_pzNurb_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_pxNurb_2_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_pxNurb_3_valueChanged(const QString &arg1);
+
+    void on_location_SpinBox_pxNurb_4_valueChanged(const QString &arg1);
+
 protected:
 
     void  mouseDoubleClickEvent(QMouseEvent * event) override;
@@ -90,7 +120,6 @@ private :
 
 signals:
     void sendMessage(const QString & msg);
-
 
 
 

@@ -49,6 +49,7 @@ void SplineC::moveSplineC(GLfloat p_x, GLfloat p_y, GLfloat p_z) {
         ctrlpoints[i][1] = ctrlpoints[i][1] + p_y;
         ctrlpoints[i][2] = ctrlpoints[i][2] + p_z;
     }
+    drawSpline();
 
 }
 
@@ -56,6 +57,7 @@ void SplineC:: moveSplinePoint(GLfloat p_x, GLfloat p_y, GLfloat p_z, int i) {
     ctrlpoints[i][0] = ctrlpoints[i][0] + p_x;
     ctrlpoints[i][1] = ctrlpoints[i][1] + p_y;
     ctrlpoints[i][2] = ctrlpoints[i][2] + p_z;
+    drawSpline();
 }
 
 void SplineC::rotateSplineC(GLint axis, GLfloat angle) {
@@ -82,6 +84,7 @@ void SplineC::rotateSplineC(GLint axis, GLfloat angle) {
     default:
         break;
     }
+    drawSpline();
 }
 
 
@@ -119,5 +122,13 @@ void SplineC::drawSpline()
         glEnd();
         glFlush();
 
+}
+void SplineC::scaleSplineC(GLfloat a){
+    for (int i = 0; i < pointsNum; i++) {
+        ctrlpoints[i][0] = ctrlpoints[i][0] *a;
+        ctrlpoints[i][1] = ctrlpoints[i][1] *a;
+        ctrlpoints[i][2] = ctrlpoints[i][2] *a;
+    }
+    drawSpline();
 }
 

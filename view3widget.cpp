@@ -5,6 +5,7 @@
 #include "plane.h"
 #include "SplineC.h"
 #include "snurbs.h"
+#include "animation.h"
 
 #include <QApplication>
 #include <QDialog>
@@ -79,6 +80,11 @@ void  view3Widget:: paintGL(){
 
        case 7: { object cube;
                 cube.Draw_Cube(view.lx,view.ly,view.lz);}
+        break;
+
+       case 10:{ animation Animation;
+              Animation.drawAnimation(view.play);
+                       }
         break;
 
     }

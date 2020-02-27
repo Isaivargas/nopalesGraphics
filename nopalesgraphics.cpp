@@ -160,10 +160,7 @@ void nopalesGraphics::on_add_point_clicked()
 
 
 
-void nopalesGraphics::on_buttonPlay_clicked()
-{
 
-}
 
 void nopalesGraphics::on_actionSplineA_triggered()
 {
@@ -200,4 +197,108 @@ void nopalesGraphics::on_actionCube_triggered()
 void nopalesGraphics::on_actionNew_Animation_triggered()
 {
 
+    ui->widget1->figure=10;
+    ui->widget1->update();
+
+}
+
+
+void nopalesGraphics::on_buttonPlay_clicked()
+{
+
+        ui->widget1->play=1;
+        ui->widget1->update();
+}
+
+void nopalesGraphics::on_point_edit_textChanged(const QString &arg1)
+{
+    ui->widget1->pointEdit=(ui->ispinbox->toPlainText()).toInt();
+
+
+}
+
+void nopalesGraphics::on_location_SpinBox_px_valueChanged(const QString &arg1)
+{
+
+    ui->widget1->i_px = ui->location_SpinBox_px->value();
+    ui->label_prueba->setText(arg1);
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_py_valueChanged(const QString &arg1)
+{
+     ui->widget1->i_py=ui->location_SpinBox_py->value();
+     ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_pz_valueChanged(const QString &arg1)
+{
+     ui->widget1->i_pz=ui->location_SpinBox_pz->value();
+     ui->widget1->update();
+}
+
+void nopalesGraphics::on_rotate_SpinBox_px_valueChanged(const QString &arg1)
+{
+     ui->widget1->p_rx=ui->rotate_SpinBox_px->value();
+     ui->widget1->update();
+}
+
+void nopalesGraphics::on_rotate_SpinBox_py_valueChanged(const QString &arg1)
+{
+    ui->widget1->p_ry=ui->rotate_SpinBox_py->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_rotate_SpinBox_pz_valueChanged(const QString &arg1)
+{
+    ui->widget1->p_rz=ui->rotate_SpinBox_pz->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_angle_valueChanged(const QString &arg1)
+{
+    ui->widget1->angle=ui->angle->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_scaleBox_valueChanged(const QString &arg1)
+{
+    ui->widget1->scale=ui->scaleBox->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_pxNurb_valueChanged(const QString &arg1)
+{
+    ui->widget1->i_px = ui->location_SpinBox_px->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_pyNurb_valueChanged(const QString &arg1)
+{
+    ui->widget1->i_py=ui->location_SpinBox_py->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_pzNurb_valueChanged(const QString &arg1)
+{
+    ui->widget1->i_pz=ui->location_SpinBox_pz->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_pxNurb_2_valueChanged(const QString &arg1)
+{
+    ui->widget1->p_rx=ui->rotate_SpinBox_px->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_pxNurb_3_valueChanged(const QString &arg1)
+{
+    ui->widget1->p_ry=ui->rotate_SpinBox_py->value();
+    ui->widget1->update();
+}
+
+void nopalesGraphics::on_location_SpinBox_pxNurb_4_valueChanged(const QString &arg1)
+{
+    ui->widget1->p_rz=ui->rotate_SpinBox_pz->value();
+    ui->widget1->update();
 }

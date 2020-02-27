@@ -39,6 +39,7 @@ public:
     /*Regresa un apuntador al erreglo que contiene los puntos de control,
     se tiene que espesificar cual punto se quiere tener mandando
     como parametro su numero en el arreglo */
+     void scaleSplineC(GLfloat angle);
     GLfloat* getctrlpoints(GLint i, GLint j);
     /*Regresa la cantidad de puntos de control usados para describir el spline*/
     GLint getpoitsNum();

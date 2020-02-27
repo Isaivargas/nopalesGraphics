@@ -10,6 +10,8 @@
 
 #include "snurbs.h"
 
+#include "animation.h"
+
 #include <QApplication>
 #include <QDialog>
 #include <QLabel>
@@ -17,8 +19,6 @@
 #include <QVBoxLayout>
 
 
-#include <GL/gl.h>
-#include <GL/glu.h>
 #include <GL/glut.h>
 
 
@@ -35,13 +35,14 @@ void view1Widget::initializeGL()
 
        initializeOpenGLFunctions();
        //glClearColor (0.0, 0.0, 0.0, 0.0);
-       glEnable(GL_DEPTH_TEST);
+       //glEnable(GL_DEPTH_TEST,GL_);
        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 }
 
 void view1Widget:: paintGL()
 {
+
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -62,8 +63,13 @@ void view1Widget:: paintGL()
     switch(figure) {
 
        case 1: {SplineC spline;
-               spline.addPoint(add_px,add_py,add_pz);
+               //spline.addPoint(add_px,add_py,add_pz);
+                //spline.drawSpline();
+               spline.moveSplineC(i_px,i_py,i_pz);
+               spline.scaleSplineC(scale);
+               spline.rotateSplineC(axis,angle);
                spline.drawSpline();
+
                    }
         break;
 
@@ -74,8 +80,12 @@ void view1Widget:: paintGL()
        // break;
 
        case 4: {SupNURBS nurbs;
-               nurbs.addPoint(2,3,1);
-               nurbs.drawNurbs();}
+               //nurbs.addPoint(2,3,1);
+               nurbs.drawNurbs();
+               nurbs.moveSplineC(i_px,i_py,i_pz);
+               nurbs.scaleSplineC(scale);
+               nurbs.rotateSplineC(axis,angle);
+        }
         break;
 
        //case 5:
@@ -90,22 +100,28 @@ void view1Widget:: paintGL()
         break;
 
 
-       case 10:{
+       case 10:{ animation Animation;
+                 Animation.drawAnimation(play);
+
+                 QTimer::singleShot(200, this, SLOT(updateCaption())); QTimer::singleShot(200, this, SLOT(updateCaption()));
+
                           }
         break;
 
     }
 
+
 }
 
-
-
 void view1Widget::resizeGL(int w, int h){
+
+
        glViewport(0, 0, w, h);
        glMatrixMode(GL_PROJECTION);
        glLoadIdentity();
        glMatrixMode(GL_MODELVIEW);
        glLoadIdentity();
+
 }
 
 int view1Widget:: getFigure(){
